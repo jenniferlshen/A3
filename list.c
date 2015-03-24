@@ -1,4 +1,4 @@
-//JennyShen
+//JENNY SHEN 260509776
 #include <stdlib.h>
 #include "list.h"
 
@@ -74,29 +74,35 @@ BOOLEAN delete(int deleteNum) {
     return 0;
 }
 
-NODE *find(int searchValue) {
+//FIND THE NODE WITH THE VALUE
+NODE *find(int number) {
     NODE *current;
     NODE *currentNext;
     current = head;
+    
+    //RUN THROUGH LIST IF LINKED LIST IS NOT NULL
     if(current!=NULL)
     {
         currentNext = current -> next;
-
-        if(current -> value == searchValue)
+        //IF CURRENT NODE'S VALUE IS EQUALED TO THE NUMBER WE ARE TRYING TO FIND, THEN RETURN
+        if(current -> value == number)
         {
             return current;
         }
+        //IF NOT, KEEP RUNNING THROUGH NEXT
         while(currentNext!=NULL)
         {
-            if(currentNext -> value == searchValue)
+            if(currentNext -> value == number)
             {
                 return current;
             }
             current = current -> next;
             currentNext = currentNext -> next;
         }
+        //RETURN NULL IF DID NOT FIND A NODE WITH THE VALUE OF NUMBER
         return NULL;
     }
+    //RETURN NULL IF LIST IS NULL
     return NULL;
 
  }
